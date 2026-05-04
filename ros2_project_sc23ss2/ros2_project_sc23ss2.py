@@ -196,7 +196,7 @@ class RobotController(Node):
         error = self.blue_cx - self.image_width / 2
         twist.angular.z = -float(error) / 500.0
 
-        # Use contour area as a proxy for distance - stop when area exceeds threshold
+        # Use contour area as a proxy for distance - stop when the area exceeds threshold
         if self.blue_area < 40000:
             twist.linear.x = 0.2
             self.get_logger().info(f'Moving towards blue, area: {self.blue_area}')
